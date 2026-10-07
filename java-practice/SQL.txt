@@ -1,0 +1,131 @@
+College table:
+
+create table college(c_id int(5) primary key auto_increment, c_name varchar(100), location varchar(100));
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+create table college(c_id int(5) primary key auto_increment, c_name varchar(100), location varchar(100));
+
+ desc college;
++----------+--------------+------+-----+---------+----------------+
+| Field    | Type         | Null | Key | Default | Extra          |
++----------+--------------+------+-----+---------+----------------+
+| c_id     | int          | NO   | PRI | NULL    | auto_increment |
+| c_name   | varchar(100) | YES  |     | NULL    |                |
+| location | varchar(100) | YES  |     | NULL    |                |
++----------+--------------+------+-----+---------+----------------+
+
+ insert into college(c_id, c_name, location) values(0, 'SCOE', 'Pune');
+Query OK, 1 row affected (0.01 sec)
+
+select *from college;
++------+--------+----------+
+| c_id | c_name | location |
++------+--------+----------+
+|    1 | GCOEY  | Yavatmal |
+|    2 | YCCE   | Nagpur   |
+|    3 | SCOE   | Pune     |
+|    4 | WCOE   | Sangli   |
++------+--------+----------+
+
+======================================================
+deptTable table:
+
+create table deptTable(dept_id int(5) primary key auto_increment, dept_name varchar(100), c_id int(5), foreign key(c_id) references college(c_id));
+
+desc deptTable;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| dept_id   | int          | NO   | PRI | NULL    | auto_increment |
+| dept_name | varchar(100) | YES  |     | NULL    |                |
+| c_id      | int          | YES  | MUL | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+
+ insert into deptTable(dept_id, dept_name, c_id) values(0, 'CSE', '1');
+Query OK, 1 row affected (0.01 sec)
+
+ select *from deptTable;
++---------+-----------+------+
+| dept_id | dept_name | c_id |
++---------+-----------+------+
+|       1 | CSE       |    1 |
+|       2 | ME        |    1 |
+|       3 | CE        |    2 |
+|       4 | EE        |    3 |
+|       5 | CSE       |    2 |
++---------+-----------+------+
+5 rows in set (0.00 sec)
+
++==============================================================
+studentTable :
+
+desc student;
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| s_id    | int          | NO   | PRI | NULL    | auto_increment |
+| s_name  | varchar(100) | YES  |     | NULL    |                |
+| dept_id | int          | YES  | MUL | NULL    |                |
+| age     | int          | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+
+ insert into student(s_id, s_name, dept_id, age) values(0, 'YXZ', 4, 20);
+Query OK, 1 row affected (0.01 sec)
+
+select *from student;
++------+--------+---------+------+
+| s_id | s_name | dept_id | age  |
++------+--------+---------+------+
+|    1 | ABC    |       1 |   20 |
+|    2 | XYZ    |       1 |   19 |
+|    3 | LMN    |       2 |   21 |
+|    4 | PQR    |       3 |   22 |
+|    5 | YXZ    |       4 |   20 |
++------+--------+---------+------+
+
+
+
+=================================================================
+courseTable table:
+
+ create table courseTable(course_id int(5) primary key auto_increment, course_name varchar(100), s_id int(5), foreign key(s_id) references student(s_id));
+
+ desc courseTable;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| course_id   | int          | NO   | PRI | NULL    | auto_increment |
+| course_name | varchar(100) | YES  |     | NULL    |                |
+| s_id        | int          | YES  | MUL | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+
+
+insert into courseTable(course_id, course_name, s_id) values(0, 'Python', 4);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select *from courseTable;
++-----------+-------------+------+
+| course_id | course_name | s_id |
++-----------+-------------+------+
+|         1 | Java        |    1 |
+|         2 | C#          |    2 |
+|         3 | C++         |    3 |
+|         4 | .Net        |    1 |
+|         5 | Python      |    4 |
+|         6 | Java        |    2 |
++-----------+-------------+------+
+================================================================
+
+Find the names of students who are enrolled in the maximum number of courses using subquery.
+
+select s_name from student where dept_id IN (select dept_id from deptTable where c_id = (select c_id from college where c_name = 'GCOEY'));
+
+
+
+Find students who are the only ones in their department.
+
+List all students with their department and college name.
+
+
+
+Show all departments and the number of students in each.  
