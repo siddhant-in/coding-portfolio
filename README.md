@@ -8,6 +8,7 @@ A curated collection of LeetCode problems solved in Java, covering Data Structur
 | ------- | ------- |
 | [0001-two-sum](https://github.com/siddhant-in/coding-portfolio/tree/main/0001-two-sum/) | Easy |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/siddhant-in/coding-portfolio/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0027-remove-element](https://github.com/siddhant-in/coding-portfolio/tree/main/0027-remove-element/) | Easy |
 ## Hash Table
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -35,4 +36,5 @@ A curated collection of LeetCode problems solved in Java, covering Data Structur
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/siddhant-in/coding-portfolio/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
+| [0027-remove-element](https://github.com/siddhant-in/coding-portfolio/tree/main/0027-remove-element/) | Easy |
 <!---LeetCode Topics End-->
