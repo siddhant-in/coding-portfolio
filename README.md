@@ -23,6 +23,7 @@ A curated collection of LeetCode problems solved in Java, covering Data Structur
 | [0003-longest-substring-without-repeating-characters](https://github.com/siddhant-in/coding-portfolio/tree/main/0003-longest-substring-without-repeating-characters/) | Medium |
 | [0012-integer-to-roman](https://github.com/siddhant-in/coding-portfolio/tree/main/0012-integer-to-roman/) | Medium |
 | [0013-roman-to-integer](https://github.com/siddhant-in/coding-portfolio/tree/main/0013-roman-to-integer/) | Easy |
+| [0125-valid-palindrome](https://github.com/siddhant-in/coding-portfolio/tree/main/0125-valid-palindrome/) | Easy |
 ## Sliding Window
 | Problem Name | Difficulty |
 | ------- | ------- |
@@ -38,6 +39,7 @@ A curated collection of LeetCode problems solved in Java, covering Data Structur
 | ------- | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/siddhant-in/coding-portfolio/tree/main/0026-remove-duplicates-from-sorted-array/) | Easy |
 | [0027-remove-element](https://github.com/siddhant-in/coding-portfolio/tree/main/0027-remove-element/) | Easy |
+| [0125-valid-palindrome](https://github.com/siddhant-in/coding-portfolio/tree/main/0125-valid-palindrome/) | Easy |
 ## Binary Search
 | Problem Name | Difficulty |
 | ------- | ------- |
